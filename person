@@ -1,73 +1,35 @@
-#include "Person.h"
+#pragma once
 #include <string>
-#include <iostream>
 using namespace std;
 
-›
-
-Person::Person(const string& id, const string& lastName, const string& firstName, const string& gender, const string& birthDate) : id(id), lastName(lastName), firstName(firstName), gender(gender), birthDate(birthDate)
+class Person
 {
-}
+private:
+	string id;
+	string lastName;
+	string firstName;
+	string gender;
+	string birthDate;
 
-Person::Person()
-{
-}
+public:
+	
+	Person(const string& id, const string& lastName, const string& firstName, const string& gender, const string& birthDate);
+	Person();
 
-string Person::getId() const
-{
-	return id;
-}
+	
+	string getId() const;
+	string getLastName() const;
+	string getFirstName() const;
+	string getGender() const;
+	string getBirthDate() const;
 
-string Person::getLastName() const
-{
-	return lastName;
-}
+	
+	void setId(const string& id);
+	void setLastName(const string& lastName);
+	void setFirstName(const string& firstName);
+	void setGender(const string& gender);
+	void setBirthDate(const string& birthDate);
 
-string Person::getFirstName() const
-{
-	return firstName;
-}
+	void display() const;
+};
 
-string Person::getGender() const
-{
-	return gender;
-}
-
-string Person::getBirthDate() const
-{
-	return birthDate;
-}
-
-void Person::setId(const string& id)
-{
-	this->id = id;
-}
-
-void Person::setLastName(const string& lastName)
-{
-	this->lastName = lastName;
-}
-
-void Person::setFirstName(const string& firstName)
-{
-	this->firstName = firstName;
-}
-
-void Person::setGender(const string& gender)
-{
-	this->gender = gender;
-}
-
-void Person::setBirthDate(const string& birthDate)
-{
-	this->birthDate = birthDate;
-}
-
-void Person::display() const
-{
-	cout << "ID: " << id << endl;
-	cout << "姓: " << lastName << endl;
-	cout << "名: " << firstName << endl;
-	cout << "性別: " << gender << endl;
-	cout << "生日: " << birthDate << endl;
-}
